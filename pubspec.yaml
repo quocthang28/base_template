@@ -46,6 +46,7 @@ dependencies:
   freezed_annotation: ^2.1.0
   document_scanner_flutter: ^0.2.7
   connectivity_plus: ^2.3.6+1
+  bloc_test: ^9.1.0
 
 
 dev_dependencies:

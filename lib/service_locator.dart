@@ -15,6 +15,6 @@ class ServiceLocator {
     GetIt.I.registerLazySingleton<TodoRepository>(() => TodoRepository());
 
     GetIt.I.registerLazySingleton<UserService>(() => UserService(GetIt.I<DioModule>().dio));
-    GetIt.I.registerLazySingleton<UserRepository>(() => UserRepository());
+    GetIt.I.registerLazySingleton<UserRepository>(() => UserRepository(userService: GetIt.I<UserService>()));
   }
 }

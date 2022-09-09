@@ -6,10 +6,15 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:label="base_template">
+        <activity
+            android:name=".SecondActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:exported="false" />
+
         <service
             android:name=".MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".MainActivity"

@@ -10,10 +10,10 @@ part 'user_event.dart';
 part 'user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
-  UserBloc() : super(const UserState(status: UserStatus.initial)) {
+  UserBloc({required this.userRepository}) : super(const UserState(status: UserStatus.initial)) {
     on<GetUserList>((event, emit) async {
       emit(state.copyWith(status: UserStatus.loading));
-      await _userRepository
+      await userRepository
           .getUserList()
           .then((value) => emit(value.isEmpty
               ? state.copyWith(status: UserStatus.emptyResponse)
@@ -24,5 +24,5 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     });
   }
 
-  final UserRepository _userRepository = GetIt.I<UserRepository>();
+  final UserRepository userRepository;
 }

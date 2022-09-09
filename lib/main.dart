@@ -3,9 +3,12 @@ import 'dart:io';
 import 'package:base_template/bloc/another_todo_bloc/another_todo_bloc.dart';
 import 'package:base_template/bloc/connectivity_checker_bloc/connectivity_checker_bloc.dart';
 import 'package:base_template/bloc/counter_bloc/counter_bloc.dart';
+import 'package:base_template/bloc/native_conn_checker_bloc/native_conn_checker_bloc.dart';
 import 'package:base_template/bloc/todo_bloc/todo_bloc.dart';
 import 'package:base_template/bloc/user_bloc/user_bloc.dart';
+import 'package:base_template/repository/user_repository.dart';
 import 'package:base_template/service_locator.dart';
+import 'package:base_template/ui/event_channel_screen.dart';
 import 'package:base_template/ui/isolate_screen.dart';
 import 'package:base_template/ui/method_channel_screen.dart';
 import 'package:base_template/ui/counter_screen.dart';
@@ -17,6 +20,7 @@ import 'package:document_scanner_flutter/document_scanner_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 void main() {
@@ -34,9 +38,10 @@ class MyApp extends StatelessWidget {
         BlocProvider<ConnectivityCheckerBloc>(
             create: (context) =>
                 ConnectivityCheckerBloc()..add(const ConnectivityCheckerEvent.initializeConCheckerEvent())),
+        BlocProvider<NativeConnCheckerBloc>(create: (context) => NativeConnCheckerBloc()),
         BlocProvider<TodoBloc>(create: (context) => TodoBloc()),
         BlocProvider<AnotherTodoBloc>(create: (context) => AnotherTodoBloc()),
-        BlocProvider<UserBloc>(create: (context) => UserBloc()),
+        BlocProvider<UserBloc>(create: (context) => UserBloc(userRepository: GetIt.I<UserRepository>())),
         BlocProvider<CounterBloc>(create: (context) => CounterBloc()),
       ],
       child: MaterialApp(
@@ -117,6 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () =>
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const MethodChannelScreen())),
                 child: const Text('Method Channel (Android)'),
+              ),
+              ElevatedButton(
+                onPressed: () =>
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const EventChannelScreen())),
+                child: const Text('Event Channel (Android)'),
               ),
               ElevatedButton(
                 onPressed: () =>
