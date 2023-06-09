@@ -1,7 +1,7 @@
 import 'package:base_template/global_observable/auth_status.dart';
 import 'package:base_template/repository/todo_repository.dart';
 import 'package:base_template/repository/user_repository.dart';
-import 'package:base_template/service/dio_module.dart';
+import 'package:base_template/network/dio_module.dart';
 import 'package:base_template/service/photo_service/photo_service.dart';
 import 'package:base_template/service/todo_service/todo_service.dart';
 import 'package:base_template/service/user_service/user_service.dart';
