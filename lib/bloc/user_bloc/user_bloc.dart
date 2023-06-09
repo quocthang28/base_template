@@ -13,16 +13,14 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc({required this.userRepository}) : super(const UserState(status: UserStatus.initial)) {
     on<GetUserList>((event, emit) async {
       emit(state.copyWith(status: UserStatus.loading));
-      await userRepository
-          .getUserList()
-          .then((value) => emit(value.isEmpty
-              ? state.copyWith(status: UserStatus.emptyResponse)
-              : state.copyWith(status: UserStatus.loaded, userList: value)))
-          .onError((error, stackTrace) {
+      var (data, error) = await userRepository.getUserList();
+      if (error != null) {
         emit(state.copyWith(status: UserStatus.error));
-      });
+      } else {
+        emit(state.copyWith(status: UserStatus.loaded, userList: data));
+      }
     });
   }
 
-  final UserRepository userRepository;
+  final IUserRepository userRepository;
 }

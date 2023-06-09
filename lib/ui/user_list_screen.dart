@@ -29,7 +29,7 @@ class _UserListScreenState extends State<UserListScreen> {
               itemCount: state.userList!.length,
               itemBuilder: (context, index) => ListTile(
                 title: Text(state.userList![index].name!),
-                subtitle: Text(state.userList![index].email!),
+                //subtitle: Text(state.userList![index].email!),
               ),
             );
           } else if (state.status == UserStatus.error) {

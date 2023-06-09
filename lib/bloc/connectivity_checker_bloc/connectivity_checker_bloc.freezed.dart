@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'connectivity_checker_bloc.dart';
 
@@ -26,10 +26,10 @@ mixin _$ConnectivityCheckerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? initializeConCheckerEvent,
-    TResult Function()? notifyDisconnectedEvent,
-    TResult Function()? notifyConnectedEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? initializeConCheckerEvent,
+    TResult? Function()? notifyDisconnectedEvent,
+    TResult? Function()? notifyConnectedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,11 +53,11 @@ mixin _$ConnectivityCheckerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_InitializeConCheckerEvent value)?
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_InitializeConCheckerEvent value)?
         initializeConCheckerEvent,
-    TResult Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
-    TResult Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
+    TResult? Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
+    TResult? Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,17 +76,19 @@ mixin _$ConnectivityCheckerEvent {
 abstract class $ConnectivityCheckerEventCopyWith<$Res> {
   factory $ConnectivityCheckerEventCopyWith(ConnectivityCheckerEvent value,
           $Res Function(ConnectivityCheckerEvent) then) =
-      _$ConnectivityCheckerEventCopyWithImpl<$Res>;
+      _$ConnectivityCheckerEventCopyWithImpl<$Res, ConnectivityCheckerEvent>;
 }
 
 /// @nodoc
-class _$ConnectivityCheckerEventCopyWithImpl<$Res>
+class _$ConnectivityCheckerEventCopyWithImpl<$Res,
+        $Val extends ConnectivityCheckerEvent>
     implements $ConnectivityCheckerEventCopyWith<$Res> {
   _$ConnectivityCheckerEventCopyWithImpl(this._value, this._then);
 
-  final ConnectivityCheckerEvent _value;
   // ignore: unused_field
-  final $Res Function(ConnectivityCheckerEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -98,14 +100,11 @@ abstract class _$$_InitialEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialEventCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerEventCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerEventCopyWithImpl<$Res, _$_InitialEvent>
     implements _$$_InitialEventCopyWith<$Res> {
   __$$_InitialEventCopyWithImpl(
       _$_InitialEvent _value, $Res Function(_$_InitialEvent) _then)
-      : super(_value, (v) => _then(v as _$_InitialEvent));
-
-  @override
-  _$_InitialEvent get _value => super._value as _$_InitialEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -141,10 +140,10 @@ class _$_InitialEvent implements _InitialEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? initializeConCheckerEvent,
-    TResult Function()? notifyDisconnectedEvent,
-    TResult Function()? notifyConnectedEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? initializeConCheckerEvent,
+    TResult? Function()? notifyDisconnectedEvent,
+    TResult? Function()? notifyConnectedEvent,
   }) {
     return initialEvent?.call();
   }
@@ -180,11 +179,11 @@ class _$_InitialEvent implements _InitialEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_InitializeConCheckerEvent value)?
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_InitializeConCheckerEvent value)?
         initializeConCheckerEvent,
-    TResult Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
-    TResult Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
+    TResult? Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
+    TResult? Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
   }) {
     return initialEvent?.call(this);
   }
@@ -220,16 +219,13 @@ abstract class _$$_InitializeConCheckerEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitializeConCheckerEventCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerEventCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerEventCopyWithImpl<$Res,
+        _$_InitializeConCheckerEvent>
     implements _$$_InitializeConCheckerEventCopyWith<$Res> {
   __$$_InitializeConCheckerEventCopyWithImpl(
       _$_InitializeConCheckerEvent _value,
       $Res Function(_$_InitializeConCheckerEvent) _then)
-      : super(_value, (v) => _then(v as _$_InitializeConCheckerEvent));
-
-  @override
-  _$_InitializeConCheckerEvent get _value =>
-      super._value as _$_InitializeConCheckerEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -266,10 +262,10 @@ class _$_InitializeConCheckerEvent implements _InitializeConCheckerEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? initializeConCheckerEvent,
-    TResult Function()? notifyDisconnectedEvent,
-    TResult Function()? notifyConnectedEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? initializeConCheckerEvent,
+    TResult? Function()? notifyDisconnectedEvent,
+    TResult? Function()? notifyConnectedEvent,
   }) {
     return initializeConCheckerEvent?.call();
   }
@@ -305,11 +301,11 @@ class _$_InitializeConCheckerEvent implements _InitializeConCheckerEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_InitializeConCheckerEvent value)?
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_InitializeConCheckerEvent value)?
         initializeConCheckerEvent,
-    TResult Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
-    TResult Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
+    TResult? Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
+    TResult? Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
   }) {
     return initializeConCheckerEvent?.call(this);
   }
@@ -344,15 +340,12 @@ abstract class _$$_NotifyDisconnectedEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NotifyDisconnectedEventCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerEventCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerEventCopyWithImpl<$Res,
+        _$_NotifyDisconnectedEvent>
     implements _$$_NotifyDisconnectedEventCopyWith<$Res> {
   __$$_NotifyDisconnectedEventCopyWithImpl(_$_NotifyDisconnectedEvent _value,
       $Res Function(_$_NotifyDisconnectedEvent) _then)
-      : super(_value, (v) => _then(v as _$_NotifyDisconnectedEvent));
-
-  @override
-  _$_NotifyDisconnectedEvent get _value =>
-      super._value as _$_NotifyDisconnectedEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -389,10 +382,10 @@ class _$_NotifyDisconnectedEvent implements _NotifyDisconnectedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? initializeConCheckerEvent,
-    TResult Function()? notifyDisconnectedEvent,
-    TResult Function()? notifyConnectedEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? initializeConCheckerEvent,
+    TResult? Function()? notifyDisconnectedEvent,
+    TResult? Function()? notifyConnectedEvent,
   }) {
     return notifyDisconnectedEvent?.call();
   }
@@ -428,11 +421,11 @@ class _$_NotifyDisconnectedEvent implements _NotifyDisconnectedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_InitializeConCheckerEvent value)?
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_InitializeConCheckerEvent value)?
         initializeConCheckerEvent,
-    TResult Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
-    TResult Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
+    TResult? Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
+    TResult? Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
   }) {
     return notifyDisconnectedEvent?.call(this);
   }
@@ -467,14 +460,12 @@ abstract class _$$_NotifyConnectedEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NotifyConnectedEventCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerEventCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerEventCopyWithImpl<$Res,
+        _$_NotifyConnectedEvent>
     implements _$$_NotifyConnectedEventCopyWith<$Res> {
   __$$_NotifyConnectedEventCopyWithImpl(_$_NotifyConnectedEvent _value,
       $Res Function(_$_NotifyConnectedEvent) _then)
-      : super(_value, (v) => _then(v as _$_NotifyConnectedEvent));
-
-  @override
-  _$_NotifyConnectedEvent get _value => super._value as _$_NotifyConnectedEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -510,10 +501,10 @@ class _$_NotifyConnectedEvent implements _NotifyConnectedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? initializeConCheckerEvent,
-    TResult Function()? notifyDisconnectedEvent,
-    TResult Function()? notifyConnectedEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? initializeConCheckerEvent,
+    TResult? Function()? notifyDisconnectedEvent,
+    TResult? Function()? notifyConnectedEvent,
   }) {
     return notifyConnectedEvent?.call();
   }
@@ -549,11 +540,11 @@ class _$_NotifyConnectedEvent implements _NotifyConnectedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_InitializeConCheckerEvent value)?
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_InitializeConCheckerEvent value)?
         initializeConCheckerEvent,
-    TResult Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
-    TResult Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
+    TResult? Function(_NotifyDisconnectedEvent value)? notifyDisconnectedEvent,
+    TResult? Function(_NotifyConnectedEvent value)? notifyConnectedEvent,
   }) {
     return notifyConnectedEvent?.call(this);
   }
@@ -590,9 +581,9 @@ mixin _$ConnectivityCheckerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? connectionLostState,
-    TResult Function()? connectionRestoredState,
+    TResult? Function()? initialState,
+    TResult? Function()? connectionLostState,
+    TResult? Function()? connectionRestoredState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -613,9 +604,9 @@ mixin _$ConnectivityCheckerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_ConnectionLostState value)? connectionLostState,
-    TResult Function(_ConnectionRestoredState value)? connectionRestoredState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_ConnectionLostState value)? connectionLostState,
+    TResult? Function(_ConnectionRestoredState value)? connectionRestoredState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -632,17 +623,19 @@ mixin _$ConnectivityCheckerState {
 abstract class $ConnectivityCheckerStateCopyWith<$Res> {
   factory $ConnectivityCheckerStateCopyWith(ConnectivityCheckerState value,
           $Res Function(ConnectivityCheckerState) then) =
-      _$ConnectivityCheckerStateCopyWithImpl<$Res>;
+      _$ConnectivityCheckerStateCopyWithImpl<$Res, ConnectivityCheckerState>;
 }
 
 /// @nodoc
-class _$ConnectivityCheckerStateCopyWithImpl<$Res>
+class _$ConnectivityCheckerStateCopyWithImpl<$Res,
+        $Val extends ConnectivityCheckerState>
     implements $ConnectivityCheckerStateCopyWith<$Res> {
   _$ConnectivityCheckerStateCopyWithImpl(this._value, this._then);
 
-  final ConnectivityCheckerState _value;
   // ignore: unused_field
-  final $Res Function(ConnectivityCheckerState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -654,14 +647,11 @@ abstract class _$$_InitialStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialStateCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerStateCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerStateCopyWithImpl<$Res, _$_InitialState>
     implements _$$_InitialStateCopyWith<$Res> {
   __$$_InitialStateCopyWithImpl(
       _$_InitialState _value, $Res Function(_$_InitialState) _then)
-      : super(_value, (v) => _then(v as _$_InitialState));
-
-  @override
-  _$_InitialState get _value => super._value as _$_InitialState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -696,9 +686,9 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? connectionLostState,
-    TResult Function()? connectionRestoredState,
+    TResult? Function()? initialState,
+    TResult? Function()? connectionLostState,
+    TResult? Function()? connectionRestoredState,
   }) {
     return initialState?.call();
   }
@@ -731,9 +721,9 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_ConnectionLostState value)? connectionLostState,
-    TResult Function(_ConnectionRestoredState value)? connectionRestoredState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_ConnectionLostState value)? connectionLostState,
+    TResult? Function(_ConnectionRestoredState value)? connectionRestoredState,
   }) {
     return initialState?.call(this);
   }
@@ -766,14 +756,11 @@ abstract class _$$_ConnectionLostStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ConnectionLostStateCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerStateCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerStateCopyWithImpl<$Res, _$_ConnectionLostState>
     implements _$$_ConnectionLostStateCopyWith<$Res> {
   __$$_ConnectionLostStateCopyWithImpl(_$_ConnectionLostState _value,
       $Res Function(_$_ConnectionLostState) _then)
-      : super(_value, (v) => _then(v as _$_ConnectionLostState));
-
-  @override
-  _$_ConnectionLostState get _value => super._value as _$_ConnectionLostState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -808,9 +795,9 @@ class _$_ConnectionLostState implements _ConnectionLostState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? connectionLostState,
-    TResult Function()? connectionRestoredState,
+    TResult? Function()? initialState,
+    TResult? Function()? connectionLostState,
+    TResult? Function()? connectionRestoredState,
   }) {
     return connectionLostState?.call();
   }
@@ -843,9 +830,9 @@ class _$_ConnectionLostState implements _ConnectionLostState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_ConnectionLostState value)? connectionLostState,
-    TResult Function(_ConnectionRestoredState value)? connectionRestoredState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_ConnectionLostState value)? connectionLostState,
+    TResult? Function(_ConnectionRestoredState value)? connectionRestoredState,
   }) {
     return connectionLostState?.call(this);
   }
@@ -878,15 +865,12 @@ abstract class _$$_ConnectionRestoredStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ConnectionRestoredStateCopyWithImpl<$Res>
-    extends _$ConnectivityCheckerStateCopyWithImpl<$Res>
+    extends _$ConnectivityCheckerStateCopyWithImpl<$Res,
+        _$_ConnectionRestoredState>
     implements _$$_ConnectionRestoredStateCopyWith<$Res> {
   __$$_ConnectionRestoredStateCopyWithImpl(_$_ConnectionRestoredState _value,
       $Res Function(_$_ConnectionRestoredState) _then)
-      : super(_value, (v) => _then(v as _$_ConnectionRestoredState));
-
-  @override
-  _$_ConnectionRestoredState get _value =>
-      super._value as _$_ConnectionRestoredState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -922,9 +906,9 @@ class _$_ConnectionRestoredState implements _ConnectionRestoredState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? connectionLostState,
-    TResult Function()? connectionRestoredState,
+    TResult? Function()? initialState,
+    TResult? Function()? connectionLostState,
+    TResult? Function()? connectionRestoredState,
   }) {
     return connectionRestoredState?.call();
   }
@@ -957,9 +941,9 @@ class _$_ConnectionRestoredState implements _ConnectionRestoredState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_ConnectionLostState value)? connectionLostState,
-    TResult Function(_ConnectionRestoredState value)? connectionRestoredState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_ConnectionLostState value)? connectionLostState,
+    TResult? Function(_ConnectionRestoredState value)? connectionRestoredState,
   }) {
     return connectionRestoredState?.call(this);
   }

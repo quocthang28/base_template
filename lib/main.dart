@@ -6,17 +6,18 @@ import 'package:base_template/bloc/counter_bloc/counter_bloc.dart';
 import 'package:base_template/bloc/native_conn_checker_bloc/native_conn_checker_bloc.dart';
 import 'package:base_template/bloc/todo_bloc/todo_bloc.dart';
 import 'package:base_template/bloc/user_bloc/user_bloc.dart';
+import 'package:base_template/global_observable/auth_status.dart';
 import 'package:base_template/repository/user_repository.dart';
 import 'package:base_template/service_locator.dart';
 import 'package:base_template/ui/event_channel_screen.dart';
 import 'package:base_template/ui/isolate_screen.dart';
+import 'package:base_template/ui/login_screen.dart';
+import 'package:base_template/ui/main_screen.dart';
 import 'package:base_template/ui/method_channel_screen.dart';
 import 'package:base_template/ui/counter_screen.dart';
 import 'package:base_template/ui/todo_screen.dart';
 import 'package:base_template/ui/user_list_screen.dart';
 import 'package:base_template/utils/timer.dart';
-import 'package:document_scanner_flutter/configs/configs.dart';
-import 'package:document_scanner_flutter/document_scanner_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,15 +34,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //note: don't create all blocs at root
     return MultiBlocProvider(
       providers: [
         BlocProvider<ConnectivityCheckerBloc>(
-            create: (context) =>
-                ConnectivityCheckerBloc()..add(const ConnectivityCheckerEvent.initializeConCheckerEvent())),
+            create: (context) => ConnectivityCheckerBloc()..add(const ConnectivityCheckerEvent.initializeConCheckerEvent())),
         BlocProvider<NativeConnCheckerBloc>(create: (context) => NativeConnCheckerBloc()),
         BlocProvider<TodoBloc>(create: (context) => TodoBloc()),
         BlocProvider<AnotherTodoBloc>(create: (context) => AnotherTodoBloc()),
-        BlocProvider<UserBloc>(create: (context) => UserBloc(userRepository: GetIt.I<UserRepository>())),
+        BlocProvider<UserBloc>(create: (context) => UserBloc(userRepository: GetIt.I<IUserRepository>())),
         BlocProvider<CounterBloc>(create: (context) => CounterBloc()),
       ],
       child: MaterialApp(
@@ -49,123 +50,85 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(title: 'Flutter Templates'),
+        home: const BootstrapScreen(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class BootstrapScreen extends StatefulWidget {
+  const BootstrapScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<BootstrapScreen> createState() => _BootstrapScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int countdownValue = 5;
+class _BootstrapScreenState extends State<BootstrapScreen> {
+  late bool isAfterRoot;
+
+  @override
+  void initState() {
+    GetIt.I<AuthStatus>().changeAuthenticationStatus(isAuthenticated: false); //check auth status here
+    isAfterRoot = true;
+    GetIt.I<AuthStatus>().authStatusStream.listen((isAuthenticated) {
+      if (isAfterRoot) {
+        isAfterRoot = false;
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => isAuthenticated
+                ? MultiBlocProvider(
+                    providers: [
+                      BlocProvider<ConnectivityCheckerBloc>(
+                          create: (context) => ConnectivityCheckerBloc()..add(const ConnectivityCheckerEvent.initializeConCheckerEvent())),
+                      BlocProvider<NativeConnCheckerBloc>(create: (context) => NativeConnCheckerBloc()),
+                      BlocProvider<TodoBloc>(create: (context) => TodoBloc()),
+                      BlocProvider<AnotherTodoBloc>(create: (context) => AnotherTodoBloc()),
+                      BlocProvider<UserBloc>(create: (context) => UserBloc(userRepository: GetIt.I<IUserRepository>())),
+                      BlocProvider<CounterBloc>(create: (context) => CounterBloc()),
+                    ],
+                    child: MaterialApp(
+                      title: 'Flutter Demo',
+                      theme: ThemeData(
+                        primarySwatch: Colors.blue,
+                      ),
+                      home: const MyHomePage(title: 'Flutter templates'),
+                    ),
+                  )
+                : const LoginScreen()));
+      } else {
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => isAuthenticated
+                ? MultiBlocProvider(
+                    providers: [
+                      BlocProvider<ConnectivityCheckerBloc>(
+                          create: (context) => ConnectivityCheckerBloc()..add(const ConnectivityCheckerEvent.initializeConCheckerEvent())),
+                      BlocProvider<NativeConnCheckerBloc>(create: (context) => NativeConnCheckerBloc()),
+                      BlocProvider<TodoBloc>(create: (context) => TodoBloc()),
+                      BlocProvider<AnotherTodoBloc>(create: (context) => AnotherTodoBloc()),
+                      BlocProvider<UserBloc>(create: (context) => UserBloc(userRepository: GetIt.I<IUserRepository>())),
+                      BlocProvider<CounterBloc>(create: (context) => CounterBloc()),
+                    ],
+                    child: MaterialApp(
+                      title: 'Flutter Demo',
+                      theme: ThemeData(
+                        primarySwatch: Colors.blue,
+                      ),
+                      home: const MyHomePage(title: 'Flutter templates'),
+                    ),
+                  )
+                : const LoginScreen()));
+      }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ConnectivityCheckerBloc, ConnectivityCheckerState>(
-      listener: (context, state) {
-        state.when(
-            initialState: () {},
-            connectionLostState: () async {
-              ScaffoldMessenger.of(context).showMaterialBanner(
-                const MaterialBanner(
-                  content: Text('Connection lost'),
-                  leading: Icon(Icons.agriculture_outlined),
-                  backgroundColor: Colors.redAccent,
-                  actions: [SizedBox.shrink()],
-                ),
-              );
-            },
-            connectionRestoredState: () async {
-              ScaffoldMessenger.of(context).showMaterialBanner(
-                const MaterialBanner(
-                  content: Text('Connection restored'),
-                  leading: Icon(Icons.agriculture_outlined),
-                  backgroundColor: Colors.greenAccent,
-                  actions: [SizedBox.shrink()],
-                ),
-              );
-              await Future.delayed(
-                  const Duration(seconds: 3), () => ScaffoldMessenger.of(context).hideCurrentMaterialBanner());
-            });
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ElevatedButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const TodoScreen())),
-                child: const Text('Reactive Repository - Bloc to Bloc communication'),
-              ),
-              ElevatedButton(
-                onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const UserListScreen())),
-                child: const Text('Rest API'),
-              ),
-              ElevatedButton(
-                onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CounterScreen())),
-                child: const Text('Bloc + Freezed'),
-              ),
-              ElevatedButton(
-                onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MethodChannelScreen())),
-                child: const Text('Method Channel (Android)'),
-              ),
-              ElevatedButton(
-                onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const EventChannelScreen())),
-                child: const Text('Event Channel (Android)'),
-              ),
-              ElevatedButton(
-                onPressed: () =>
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const IsolateScreen())),
-                child: const Text('Isolate'),
-              ),
-              ElevatedButton(
-                onPressed: () async {
-                  try {
-                    var androidLabelsConfigs = {
-                      ScannerLabelsConfig.ANDROID_SAVE_BUTTON_LABEL: "Save",
-                    };
-                    File? scannedDoc = await DocumentScannerFlutter.launch(context,
-                        source: ScannerFileSource.CAMERA, labelsConfig: androidLabelsConfigs);
+    //this screen should not be shown, or navigated to
+    return Container();
+  }
 
-                    print(scannedDoc!.path.toString());
-                  } on PlatformException {}
-                },
-                child: const Text('Document scanner'),
-              ),
-              countdownValue.toString().text.make(),
-              ElevatedButton(
-                onPressed: () async {
-                  TimerUtils.startTimer(
-                      5,
-                      (timerValue) => {
-                            setState(() {
-                              countdownValue = timerValue;
-                            })
-                          }, () {
-                    print('timer finished');
-                  });
-                },
-                child: const Text('Start timer'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+  @override
+  void dispose() {
+    super.dispose();
   }
 }

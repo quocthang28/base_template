@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'todo_bloc.dart';
 
@@ -25,9 +25,9 @@ mixin _$TodoEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? fetchTodoListEvent,
-    TResult Function(Todo todo)? addTodoEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? fetchTodoListEvent,
+    TResult? Function(Todo todo)? addTodoEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$TodoEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_FetchTodoListEvent value)? fetchTodoListEvent,
-    TResult Function(_AddTodoEvent value)? addTodoEvent,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_FetchTodoListEvent value)? fetchTodoListEvent,
+    TResult? Function(_AddTodoEvent value)? addTodoEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,16 +65,18 @@ mixin _$TodoEvent {
 /// @nodoc
 abstract class $TodoEventCopyWith<$Res> {
   factory $TodoEventCopyWith(TodoEvent value, $Res Function(TodoEvent) then) =
-      _$TodoEventCopyWithImpl<$Res>;
+      _$TodoEventCopyWithImpl<$Res, TodoEvent>;
 }
 
 /// @nodoc
-class _$TodoEventCopyWithImpl<$Res> implements $TodoEventCopyWith<$Res> {
+class _$TodoEventCopyWithImpl<$Res, $Val extends TodoEvent>
+    implements $TodoEventCopyWith<$Res> {
   _$TodoEventCopyWithImpl(this._value, this._then);
 
-  final TodoEvent _value;
   // ignore: unused_field
-  final $Res Function(TodoEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -85,14 +87,12 @@ abstract class _$$_InitialEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialEventCopyWithImpl<$Res> extends _$TodoEventCopyWithImpl<$Res>
+class __$$_InitialEventCopyWithImpl<$Res>
+    extends _$TodoEventCopyWithImpl<$Res, _$_InitialEvent>
     implements _$$_InitialEventCopyWith<$Res> {
   __$$_InitialEventCopyWithImpl(
       _$_InitialEvent _value, $Res Function(_$_InitialEvent) _then)
-      : super(_value, (v) => _then(v as _$_InitialEvent));
-
-  @override
-  _$_InitialEvent get _value => super._value as _$_InitialEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -127,9 +127,9 @@ class _$_InitialEvent implements _InitialEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? fetchTodoListEvent,
-    TResult Function(Todo todo)? addTodoEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? fetchTodoListEvent,
+    TResult? Function(Todo todo)? addTodoEvent,
   }) {
     return initialEvent?.call();
   }
@@ -161,9 +161,9 @@ class _$_InitialEvent implements _InitialEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_FetchTodoListEvent value)? fetchTodoListEvent,
-    TResult Function(_AddTodoEvent value)? addTodoEvent,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_FetchTodoListEvent value)? fetchTodoListEvent,
+    TResult? Function(_AddTodoEvent value)? addTodoEvent,
   }) {
     return initialEvent?.call(this);
   }
@@ -196,14 +196,11 @@ abstract class _$$_FetchTodoListEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchTodoListEventCopyWithImpl<$Res>
-    extends _$TodoEventCopyWithImpl<$Res>
+    extends _$TodoEventCopyWithImpl<$Res, _$_FetchTodoListEvent>
     implements _$$_FetchTodoListEventCopyWith<$Res> {
   __$$_FetchTodoListEventCopyWithImpl(
       _$_FetchTodoListEvent _value, $Res Function(_$_FetchTodoListEvent) _then)
-      : super(_value, (v) => _then(v as _$_FetchTodoListEvent));
-
-  @override
-  _$_FetchTodoListEvent get _value => super._value as _$_FetchTodoListEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -238,9 +235,9 @@ class _$_FetchTodoListEvent implements _FetchTodoListEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? fetchTodoListEvent,
-    TResult Function(Todo todo)? addTodoEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? fetchTodoListEvent,
+    TResult? Function(Todo todo)? addTodoEvent,
   }) {
     return fetchTodoListEvent?.call();
   }
@@ -272,9 +269,9 @@ class _$_FetchTodoListEvent implements _FetchTodoListEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_FetchTodoListEvent value)? fetchTodoListEvent,
-    TResult Function(_AddTodoEvent value)? addTodoEvent,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_FetchTodoListEvent value)? fetchTodoListEvent,
+    TResult? Function(_AddTodoEvent value)? addTodoEvent,
   }) {
     return fetchTodoListEvent?.call(this);
   }
@@ -303,25 +300,25 @@ abstract class _$$_AddTodoEventCopyWith<$Res> {
   factory _$$_AddTodoEventCopyWith(
           _$_AddTodoEvent value, $Res Function(_$_AddTodoEvent) then) =
       __$$_AddTodoEventCopyWithImpl<$Res>;
+  @useResult
   $Res call({Todo todo});
 }
 
 /// @nodoc
-class __$$_AddTodoEventCopyWithImpl<$Res> extends _$TodoEventCopyWithImpl<$Res>
+class __$$_AddTodoEventCopyWithImpl<$Res>
+    extends _$TodoEventCopyWithImpl<$Res, _$_AddTodoEvent>
     implements _$$_AddTodoEventCopyWith<$Res> {
   __$$_AddTodoEventCopyWithImpl(
       _$_AddTodoEvent _value, $Res Function(_$_AddTodoEvent) _then)
-      : super(_value, (v) => _then(v as _$_AddTodoEvent));
+      : super(_value, _then);
 
-  @override
-  _$_AddTodoEvent get _value => super._value as _$_AddTodoEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todo = freezed,
+    Object? todo = null,
   }) {
     return _then(_$_AddTodoEvent(
-      todo == freezed
+      null == todo
           ? _value.todo
           : todo // ignore: cast_nullable_to_non_nullable
               as Todo,
@@ -347,15 +344,15 @@ class _$_AddTodoEvent implements _AddTodoEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddTodoEvent &&
-            const DeepCollectionEquality().equals(other.todo, todo));
+            (identical(other.todo, todo) || other.todo == todo));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(todo));
+  int get hashCode => Object.hash(runtimeType, todo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AddTodoEventCopyWith<_$_AddTodoEvent> get copyWith =>
       __$$_AddTodoEventCopyWithImpl<_$_AddTodoEvent>(this, _$identity);
 
@@ -372,9 +369,9 @@ class _$_AddTodoEvent implements _AddTodoEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? fetchTodoListEvent,
-    TResult Function(Todo todo)? addTodoEvent,
+    TResult? Function()? initialEvent,
+    TResult? Function()? fetchTodoListEvent,
+    TResult? Function(Todo todo)? addTodoEvent,
   }) {
     return addTodoEvent?.call(todo);
   }
@@ -406,9 +403,9 @@ class _$_AddTodoEvent implements _AddTodoEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_FetchTodoListEvent value)? fetchTodoListEvent,
-    TResult Function(_AddTodoEvent value)? addTodoEvent,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_FetchTodoListEvent value)? fetchTodoListEvent,
+    TResult? Function(_AddTodoEvent value)? addTodoEvent,
   }) {
     return addTodoEvent?.call(this);
   }
@@ -448,9 +445,9 @@ mixin _$TodoState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? fetchingState,
-    TResult Function(List<Todo> todoList)? fetchedState,
+    TResult? Function()? initialState,
+    TResult? Function()? fetchingState,
+    TResult? Function(List<Todo> todoList)? fetchedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -470,9 +467,9 @@ mixin _$TodoState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_FetchingState value)? fetchingState,
-    TResult Function(_FetchedState value)? fetchedState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_FetchingState value)? fetchingState,
+    TResult? Function(_FetchedState value)? fetchedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -488,16 +485,18 @@ mixin _$TodoState {
 /// @nodoc
 abstract class $TodoStateCopyWith<$Res> {
   factory $TodoStateCopyWith(TodoState value, $Res Function(TodoState) then) =
-      _$TodoStateCopyWithImpl<$Res>;
+      _$TodoStateCopyWithImpl<$Res, TodoState>;
 }
 
 /// @nodoc
-class _$TodoStateCopyWithImpl<$Res> implements $TodoStateCopyWith<$Res> {
+class _$TodoStateCopyWithImpl<$Res, $Val extends TodoState>
+    implements $TodoStateCopyWith<$Res> {
   _$TodoStateCopyWithImpl(this._value, this._then);
 
-  final TodoState _value;
   // ignore: unused_field
-  final $Res Function(TodoState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -508,14 +507,12 @@ abstract class _$$_InitialStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialStateCopyWithImpl<$Res> extends _$TodoStateCopyWithImpl<$Res>
+class __$$_InitialStateCopyWithImpl<$Res>
+    extends _$TodoStateCopyWithImpl<$Res, _$_InitialState>
     implements _$$_InitialStateCopyWith<$Res> {
   __$$_InitialStateCopyWithImpl(
       _$_InitialState _value, $Res Function(_$_InitialState) _then)
-      : super(_value, (v) => _then(v as _$_InitialState));
-
-  @override
-  _$_InitialState get _value => super._value as _$_InitialState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -550,9 +547,9 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? fetchingState,
-    TResult Function(List<Todo> todoList)? fetchedState,
+    TResult? Function()? initialState,
+    TResult? Function()? fetchingState,
+    TResult? Function(List<Todo> todoList)? fetchedState,
   }) {
     return initialState?.call();
   }
@@ -584,9 +581,9 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_FetchingState value)? fetchingState,
-    TResult Function(_FetchedState value)? fetchedState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_FetchingState value)? fetchingState,
+    TResult? Function(_FetchedState value)? fetchedState,
   }) {
     return initialState?.call(this);
   }
@@ -618,14 +615,12 @@ abstract class _$$_FetchingStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FetchingStateCopyWithImpl<$Res> extends _$TodoStateCopyWithImpl<$Res>
+class __$$_FetchingStateCopyWithImpl<$Res>
+    extends _$TodoStateCopyWithImpl<$Res, _$_FetchingState>
     implements _$$_FetchingStateCopyWith<$Res> {
   __$$_FetchingStateCopyWithImpl(
       _$_FetchingState _value, $Res Function(_$_FetchingState) _then)
-      : super(_value, (v) => _then(v as _$_FetchingState));
-
-  @override
-  _$_FetchingState get _value => super._value as _$_FetchingState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -660,9 +655,9 @@ class _$_FetchingState implements _FetchingState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? fetchingState,
-    TResult Function(List<Todo> todoList)? fetchedState,
+    TResult? Function()? initialState,
+    TResult? Function()? fetchingState,
+    TResult? Function(List<Todo> todoList)? fetchedState,
   }) {
     return fetchingState?.call();
   }
@@ -694,9 +689,9 @@ class _$_FetchingState implements _FetchingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_FetchingState value)? fetchingState,
-    TResult Function(_FetchedState value)? fetchedState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_FetchingState value)? fetchingState,
+    TResult? Function(_FetchedState value)? fetchedState,
   }) {
     return fetchingState?.call(this);
   }
@@ -725,25 +720,25 @@ abstract class _$$_FetchedStateCopyWith<$Res> {
   factory _$$_FetchedStateCopyWith(
           _$_FetchedState value, $Res Function(_$_FetchedState) then) =
       __$$_FetchedStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Todo> todoList});
 }
 
 /// @nodoc
-class __$$_FetchedStateCopyWithImpl<$Res> extends _$TodoStateCopyWithImpl<$Res>
+class __$$_FetchedStateCopyWithImpl<$Res>
+    extends _$TodoStateCopyWithImpl<$Res, _$_FetchedState>
     implements _$$_FetchedStateCopyWith<$Res> {
   __$$_FetchedStateCopyWithImpl(
       _$_FetchedState _value, $Res Function(_$_FetchedState) _then)
-      : super(_value, (v) => _then(v as _$_FetchedState));
+      : super(_value, _then);
 
-  @override
-  _$_FetchedState get _value => super._value as _$_FetchedState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todoList = freezed,
+    Object? todoList = null,
   }) {
     return _then(_$_FetchedState(
-      todoList == freezed
+      null == todoList
           ? _value._todoList
           : todoList // ignore: cast_nullable_to_non_nullable
               as List<Todo>,
@@ -759,6 +754,7 @@ class _$_FetchedState implements _FetchedState {
   final List<Todo> _todoList;
   @override
   List<Todo> get todoList {
+    if (_todoList is EqualUnmodifiableListView) return _todoList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_todoList);
   }
@@ -782,6 +778,7 @@ class _$_FetchedState implements _FetchedState {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FetchedStateCopyWith<_$_FetchedState> get copyWith =>
       __$$_FetchedStateCopyWithImpl<_$_FetchedState>(this, _$identity);
 
@@ -798,9 +795,9 @@ class _$_FetchedState implements _FetchedState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? fetchingState,
-    TResult Function(List<Todo> todoList)? fetchedState,
+    TResult? Function()? initialState,
+    TResult? Function()? fetchingState,
+    TResult? Function(List<Todo> todoList)? fetchedState,
   }) {
     return fetchedState?.call(todoList);
   }
@@ -832,9 +829,9 @@ class _$_FetchedState implements _FetchedState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_FetchingState value)? fetchingState,
-    TResult Function(_FetchedState value)? fetchedState,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_FetchingState value)? fetchingState,
+    TResult? Function(_FetchedState value)? fetchedState,
   }) {
     return fetchedState?.call(this);
   }

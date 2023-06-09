@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'counter_bloc.dart';
 
@@ -25,9 +25,9 @@ mixin _$CounterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? increaseButtonPressed,
-    TResult Function()? decreaseButtonPressed,
+    TResult? Function()? initialEvent,
+    TResult? Function()? increaseButtonPressed,
+    TResult? Function()? decreaseButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,9 +49,9 @@ mixin _$CounterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_IncreaseButtonPressed value)? increaseButtonPressed,
-    TResult Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_IncreaseButtonPressed value)? increaseButtonPressed,
+    TResult? Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,16 +68,18 @@ mixin _$CounterEvent {
 abstract class $CounterEventCopyWith<$Res> {
   factory $CounterEventCopyWith(
           CounterEvent value, $Res Function(CounterEvent) then) =
-      _$CounterEventCopyWithImpl<$Res>;
+      _$CounterEventCopyWithImpl<$Res, CounterEvent>;
 }
 
 /// @nodoc
-class _$CounterEventCopyWithImpl<$Res> implements $CounterEventCopyWith<$Res> {
+class _$CounterEventCopyWithImpl<$Res, $Val extends CounterEvent>
+    implements $CounterEventCopyWith<$Res> {
   _$CounterEventCopyWithImpl(this._value, this._then);
 
-  final CounterEvent _value;
   // ignore: unused_field
-  final $Res Function(CounterEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -89,14 +91,11 @@ abstract class _$$_InitialEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialEventCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res>
+    extends _$CounterEventCopyWithImpl<$Res, _$_InitialEvent>
     implements _$$_InitialEventCopyWith<$Res> {
   __$$_InitialEventCopyWithImpl(
       _$_InitialEvent _value, $Res Function(_$_InitialEvent) _then)
-      : super(_value, (v) => _then(v as _$_InitialEvent));
-
-  @override
-  _$_InitialEvent get _value => super._value as _$_InitialEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -131,9 +130,9 @@ class _$_InitialEvent implements _InitialEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? increaseButtonPressed,
-    TResult Function()? decreaseButtonPressed,
+    TResult? Function()? initialEvent,
+    TResult? Function()? increaseButtonPressed,
+    TResult? Function()? decreaseButtonPressed,
   }) {
     return initialEvent?.call();
   }
@@ -167,9 +166,9 @@ class _$_InitialEvent implements _InitialEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_IncreaseButtonPressed value)? increaseButtonPressed,
-    TResult Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_IncreaseButtonPressed value)? increaseButtonPressed,
+    TResult? Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
   }) {
     return initialEvent?.call(this);
   }
@@ -202,15 +201,11 @@ abstract class _$$_IncreaseButtonPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_IncreaseButtonPressedCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res>
+    extends _$CounterEventCopyWithImpl<$Res, _$_IncreaseButtonPressed>
     implements _$$_IncreaseButtonPressedCopyWith<$Res> {
   __$$_IncreaseButtonPressedCopyWithImpl(_$_IncreaseButtonPressed _value,
       $Res Function(_$_IncreaseButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$_IncreaseButtonPressed));
-
-  @override
-  _$_IncreaseButtonPressed get _value =>
-      super._value as _$_IncreaseButtonPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -245,9 +240,9 @@ class _$_IncreaseButtonPressed implements _IncreaseButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? increaseButtonPressed,
-    TResult Function()? decreaseButtonPressed,
+    TResult? Function()? initialEvent,
+    TResult? Function()? increaseButtonPressed,
+    TResult? Function()? decreaseButtonPressed,
   }) {
     return increaseButtonPressed?.call();
   }
@@ -281,9 +276,9 @@ class _$_IncreaseButtonPressed implements _IncreaseButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_IncreaseButtonPressed value)? increaseButtonPressed,
-    TResult Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_IncreaseButtonPressed value)? increaseButtonPressed,
+    TResult? Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
   }) {
     return increaseButtonPressed?.call(this);
   }
@@ -316,15 +311,11 @@ abstract class _$$_DecreaseButtonPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DecreaseButtonPressedCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res>
+    extends _$CounterEventCopyWithImpl<$Res, _$_DecreaseButtonPressed>
     implements _$$_DecreaseButtonPressedCopyWith<$Res> {
   __$$_DecreaseButtonPressedCopyWithImpl(_$_DecreaseButtonPressed _value,
       $Res Function(_$_DecreaseButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$_DecreaseButtonPressed));
-
-  @override
-  _$_DecreaseButtonPressed get _value =>
-      super._value as _$_DecreaseButtonPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -359,9 +350,9 @@ class _$_DecreaseButtonPressed implements _DecreaseButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialEvent,
-    TResult Function()? increaseButtonPressed,
-    TResult Function()? decreaseButtonPressed,
+    TResult? Function()? initialEvent,
+    TResult? Function()? increaseButtonPressed,
+    TResult? Function()? decreaseButtonPressed,
   }) {
     return decreaseButtonPressed?.call();
   }
@@ -395,9 +386,9 @@ class _$_DecreaseButtonPressed implements _DecreaseButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialEvent value)? initialEvent,
-    TResult Function(_IncreaseButtonPressed value)? increaseButtonPressed,
-    TResult Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
+    TResult? Function(_InitialEvent value)? initialEvent,
+    TResult? Function(_IncreaseButtonPressed value)? increaseButtonPressed,
+    TResult? Function(_DecreaseButtonPressed value)? decreaseButtonPressed,
   }) {
     return decreaseButtonPressed?.call(this);
   }
@@ -432,9 +423,9 @@ mixin _$CounterState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function(int newValue)? numberIncreased,
-    TResult Function(int newValue)? numberDecreased,
+    TResult? Function()? initialState,
+    TResult? Function(int newValue)? numberIncreased,
+    TResult? Function(int newValue)? numberDecreased,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -454,9 +445,9 @@ mixin _$CounterState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_NumberIncreased value)? numberIncreased,
-    TResult Function(_NumberDecreased value)? numberDecreased,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_NumberIncreased value)? numberIncreased,
+    TResult? Function(_NumberDecreased value)? numberDecreased,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -473,16 +464,18 @@ mixin _$CounterState {
 abstract class $CounterStateCopyWith<$Res> {
   factory $CounterStateCopyWith(
           CounterState value, $Res Function(CounterState) then) =
-      _$CounterStateCopyWithImpl<$Res>;
+      _$CounterStateCopyWithImpl<$Res, CounterState>;
 }
 
 /// @nodoc
-class _$CounterStateCopyWithImpl<$Res> implements $CounterStateCopyWith<$Res> {
+class _$CounterStateCopyWithImpl<$Res, $Val extends CounterState>
+    implements $CounterStateCopyWith<$Res> {
   _$CounterStateCopyWithImpl(this._value, this._then);
 
-  final CounterState _value;
   // ignore: unused_field
-  final $Res Function(CounterState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -494,14 +487,11 @@ abstract class _$$_InitialStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialStateCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res>
+    extends _$CounterStateCopyWithImpl<$Res, _$_InitialState>
     implements _$$_InitialStateCopyWith<$Res> {
   __$$_InitialStateCopyWithImpl(
       _$_InitialState _value, $Res Function(_$_InitialState) _then)
-      : super(_value, (v) => _then(v as _$_InitialState));
-
-  @override
-  _$_InitialState get _value => super._value as _$_InitialState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -536,9 +526,9 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function(int newValue)? numberIncreased,
-    TResult Function(int newValue)? numberDecreased,
+    TResult? Function()? initialState,
+    TResult? Function(int newValue)? numberIncreased,
+    TResult? Function(int newValue)? numberDecreased,
   }) {
     return initialState?.call();
   }
@@ -570,9 +560,9 @@ class _$_InitialState implements _InitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_NumberIncreased value)? numberIncreased,
-    TResult Function(_NumberDecreased value)? numberDecreased,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_NumberIncreased value)? numberIncreased,
+    TResult? Function(_NumberDecreased value)? numberDecreased,
   }) {
     return initialState?.call(this);
   }
@@ -601,26 +591,25 @@ abstract class _$$_NumberIncreasedCopyWith<$Res> {
   factory _$$_NumberIncreasedCopyWith(
           _$_NumberIncreased value, $Res Function(_$_NumberIncreased) then) =
       __$$_NumberIncreasedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int newValue});
 }
 
 /// @nodoc
 class __$$_NumberIncreasedCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res>
+    extends _$CounterStateCopyWithImpl<$Res, _$_NumberIncreased>
     implements _$$_NumberIncreasedCopyWith<$Res> {
   __$$_NumberIncreasedCopyWithImpl(
       _$_NumberIncreased _value, $Res Function(_$_NumberIncreased) _then)
-      : super(_value, (v) => _then(v as _$_NumberIncreased));
+      : super(_value, _then);
 
-  @override
-  _$_NumberIncreased get _value => super._value as _$_NumberIncreased;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_NumberIncreased(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as int,
@@ -646,15 +635,16 @@ class _$_NumberIncreased implements _NumberIncreased {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NumberIncreased &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NumberIncreasedCopyWith<_$_NumberIncreased> get copyWith =>
       __$$_NumberIncreasedCopyWithImpl<_$_NumberIncreased>(this, _$identity);
 
@@ -671,9 +661,9 @@ class _$_NumberIncreased implements _NumberIncreased {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function(int newValue)? numberIncreased,
-    TResult Function(int newValue)? numberDecreased,
+    TResult? Function()? initialState,
+    TResult? Function(int newValue)? numberIncreased,
+    TResult? Function(int newValue)? numberDecreased,
   }) {
     return numberIncreased?.call(newValue);
   }
@@ -705,9 +695,9 @@ class _$_NumberIncreased implements _NumberIncreased {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_NumberIncreased value)? numberIncreased,
-    TResult Function(_NumberDecreased value)? numberDecreased,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_NumberIncreased value)? numberIncreased,
+    TResult? Function(_NumberDecreased value)? numberDecreased,
   }) {
     return numberIncreased?.call(this);
   }
@@ -741,26 +731,25 @@ abstract class _$$_NumberDecreasedCopyWith<$Res> {
   factory _$$_NumberDecreasedCopyWith(
           _$_NumberDecreased value, $Res Function(_$_NumberDecreased) then) =
       __$$_NumberDecreasedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int newValue});
 }
 
 /// @nodoc
 class __$$_NumberDecreasedCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res>
+    extends _$CounterStateCopyWithImpl<$Res, _$_NumberDecreased>
     implements _$$_NumberDecreasedCopyWith<$Res> {
   __$$_NumberDecreasedCopyWithImpl(
       _$_NumberDecreased _value, $Res Function(_$_NumberDecreased) _then)
-      : super(_value, (v) => _then(v as _$_NumberDecreased));
+      : super(_value, _then);
 
-  @override
-  _$_NumberDecreased get _value => super._value as _$_NumberDecreased;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_NumberDecreased(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as int,
@@ -786,15 +775,16 @@ class _$_NumberDecreased implements _NumberDecreased {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NumberDecreased &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NumberDecreasedCopyWith<_$_NumberDecreased> get copyWith =>
       __$$_NumberDecreasedCopyWithImpl<_$_NumberDecreased>(this, _$identity);
 
@@ -811,9 +801,9 @@ class _$_NumberDecreased implements _NumberDecreased {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function(int newValue)? numberIncreased,
-    TResult Function(int newValue)? numberDecreased,
+    TResult? Function()? initialState,
+    TResult? Function(int newValue)? numberIncreased,
+    TResult? Function(int newValue)? numberDecreased,
   }) {
     return numberDecreased?.call(newValue);
   }
@@ -845,9 +835,9 @@ class _$_NumberDecreased implements _NumberDecreased {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_NumberIncreased value)? numberIncreased,
-    TResult Function(_NumberDecreased value)? numberDecreased,
+    TResult? Function(_InitialState value)? initialState,
+    TResult? Function(_NumberIncreased value)? numberIncreased,
+    TResult? Function(_NumberDecreased value)? numberDecreased,
   }) {
     return numberDecreased?.call(this);
   }

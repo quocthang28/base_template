@@ -13,7 +13,7 @@ void main() {
   group('User Bloc', () {
     blocTest(
       'fetch user list from server when adding GetUserList event',
-      build: () => UserBloc(userRepository: GetIt.I<UserRepository>()),
+      build: () => UserBloc(userRepository: GetIt.I<IUserRepository>()),
       act: (UserBloc bloc) => bloc.add(GetUserList()),
       wait: const Duration(seconds: 5),
       skip: 1,

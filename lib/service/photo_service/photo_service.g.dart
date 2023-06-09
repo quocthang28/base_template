@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_service.dart';
+part of 'photo_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'user_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _UserService implements UserService {
-  _UserService(
+class _PhotoService implements PhotoService {
+  _PhotoService(
     this._dio, {
     this.baseUrl,
   });
@@ -19,28 +19,27 @@ class _UserService implements UserService {
   String? baseUrl;
 
   @override
-  Future<List<User>> getUserList() async {
+  Future<List<Photo>> getPhotoList() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<User>>(Options(
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<Photo>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/users',
+              '/photos',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = await compute(
-      deserializeUserList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+    var value = _result.data!
+        .map((dynamic i) => Photo.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 
