@@ -35,23 +35,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //note: don't create all blocs at root
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<ConnectivityCheckerBloc>(
-            create: (context) => ConnectivityCheckerBloc()..add(const ConnectivityCheckerEvent.initializeConCheckerEvent())),
-        BlocProvider<NativeConnCheckerBloc>(create: (context) => NativeConnCheckerBloc()),
-        BlocProvider<TodoBloc>(create: (context) => TodoBloc()),
-        BlocProvider<AnotherTodoBloc>(create: (context) => AnotherTodoBloc()),
-        BlocProvider<UserBloc>(create: (context) => UserBloc(userRepository: GetIt.I<IUserRepository>())),
-        BlocProvider<CounterBloc>(create: (context) => CounterBloc()),
-      ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const BootstrapScreen(),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const BootstrapScreen(),
     );
   }
 }
@@ -68,7 +57,7 @@ class _BootstrapScreenState extends State<BootstrapScreen> {
 
   @override
   void initState() {
-    GetIt.I<AuthStatus>().changeAuthenticationStatus(isAuthenticated: false); //check auth status here
+    GetIt.I<AuthStatus>().changeAuthenticationStatus(isAuthenticated: false); //todo: check auth status here from shared pref
     isAfterRoot = true;
     GetIt.I<AuthStatus>().authStatusStream.listen((isAuthenticated) {
       if (isAfterRoot) {
@@ -90,7 +79,7 @@ class _BootstrapScreenState extends State<BootstrapScreen> {
                       theme: ThemeData(
                         primarySwatch: Colors.blue,
                       ),
-                      home: const MyHomePage(title: 'Flutter templates'),
+                      home: const MainScreen(title: 'Flutter templates'),
                     ),
                   )
                 : const LoginScreen()));
@@ -112,7 +101,7 @@ class _BootstrapScreenState extends State<BootstrapScreen> {
                       theme: ThemeData(
                         primarySwatch: Colors.blue,
                       ),
-                      home: const MyHomePage(title: 'Flutter templates'),
+                      home: const MainScreen(title: 'Flutter templates'),
                     ),
                   )
                 : const LoginScreen()));
@@ -123,7 +112,7 @@ class _BootstrapScreenState extends State<BootstrapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //this screen should not be shown, or navigated to
+    //this screen should not be shown, or be navigated to
     return Container();
   }
 
